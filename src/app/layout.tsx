@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
-import Nav from "@/components/navbar/Nav";
+import NavBar from "@/components/navbar/NavBar";
 
 // buscar otras fuentes
 // const geistSans = Geist({
@@ -32,8 +32,10 @@ export default function RootLayout({
       > */}
       <body>
         <Providers>
-          <Nav />
-        {children}
+          <NavBar />
+          <main className="container mx-auto p-3">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
