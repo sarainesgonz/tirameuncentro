@@ -8,8 +8,8 @@ export default function Home() {
   return (
    <div>
     <Button 
-    color="danger" 
-    variant="flat" 
+    className="bg-gradient-to-tr from-red-700 via-orange-600 to-yellow-500 text-white shadow-lg"
+    // variant="flat" 
     startContent={<TbMessageChatbot size={20}/>}
     >
     Charlita?
@@ -17,8 +17,8 @@ export default function Home() {
     <Button 
     as={Link}
     href="/users"
-    color="danger" 
-    variant="flat" 
+    className="bg-gradient-to-tr from-red-700 via-orange-600 to-yellow-500 text-white shadow-lg"
+    // variant="flat" 
     startContent={<FaUsers size={20}/>}
     >
     Ver la tribuna
