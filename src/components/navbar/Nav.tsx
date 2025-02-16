@@ -24,11 +24,11 @@ export default function Nav() {
         <NavbarContent justify='center'>
             <NavbarItem as={Link} href='/users'>Enganches</NavbarItem>
             <NavbarItem as={Link} href='/lists'>Tribuna</NavbarItem>
-            <NavbarItem as={Link} href='/lists'>Mensajes</NavbarItem>
+            <NavbarItem as={Link} href='/messages'>Mensajes</NavbarItem>
         </NavbarContent>
         <NavbarContent justify='end'>
-            <Button variant='light' className='text-white'>Iniciar sesión</Button>
-            <Button variant='light' className='text-white'>Registrarse</Button>
+            <Button as={Link} href='/login' variant='light' className='text-white'>Iniciar sesión</Button>
+            <Button as={Link} href='/register' variant='light' className='text-white'>Registrarse</Button>
         </NavbarContent>
     </Navbar>
   )
