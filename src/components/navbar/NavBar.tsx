@@ -55,10 +55,10 @@ export default function Nav() {
             </NavbarContent>
 
             <NavbarContent justify='end'>
-                <NavbarItem className='hidden lg:flex'>
+                <NavbarItem className='hidden sm:flex'>
                     <Button as={Link} href='/login' variant='light' className='text-white'>Iniciar sesión</Button>
                 </NavbarItem>
-                <NavbarItem className='hidden lg:flex'>
+                <NavbarItem className='hidden sm:flex'>
                     <Button as={Link} href='/register' variant='light' className='text-white'>Registrarse</Button>
                 </NavbarItem>
             </NavbarContent>

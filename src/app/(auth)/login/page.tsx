@@ -1,7 +1,12 @@
 import React from 'react'
+import LoginForm from './LoginForm'
 
-export default function Login() {
+
+export default function LoginPage() {
   return (
-    <div>Iniciar sesión</div>
+    <div className='flex items-center justify-center p-4' >
+    <LoginForm /> 
+    </div>
+
   )
 }
