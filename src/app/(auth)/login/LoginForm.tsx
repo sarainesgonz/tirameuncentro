@@ -1,15 +1,21 @@
 'use client';
 
+import { loginSchema, LoginSchema } from '@/lib/schemas/loginSchema';
 import { Button, Card, CardBody, CardHeader, Input } from '@heroui/react'
+import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { RiLoginCircleLine } from 'react-icons/ri'
 
 export default function LoginForm() {
 
-    const {register, handleSubmit, formState: {errors, isValid}} = useForm();
+    const {register, handleSubmit, formState: {errors, isValid}} = useForm<LoginSchema>({
+        resolver: zodResolver(loginSchema), //le digo usá este schema de zod para decidir si los datos son válidos o nos
+        mode: 'onTouched' //validar el formulario cuando el usuario deja de escribir
+    });
 
-    const onSubmit = (data: any) => { 
+    //ya sabemos que el tipo de data que estamos utilizando es LoginSchema
+    const onSubmit = (data: LoginSchema) => { 
         console.log(data) //get data from form
     }
 
@@ -36,7 +42,7 @@ export default function LoginForm() {
                                 label="Email"
                                 type="email"
                                 variant="underlined" 
-                                {...register("email", {required: "Se requiere un email."})}
+                                {...register("email")}
                                 isInvalid={!!errors.email} //doble !! para convertir object a boolean
                                 errorMessage={errors.email?.message as string}
                                 />
@@ -45,7 +51,7 @@ export default function LoginForm() {
                                 label="Contraseña"
                                 type="password"
                                 variant="underlined" 
-                                {...register("password", {required:  "Se requiere una contraseña."})}
+                                {...register("password")}
                                 isInvalid={!!errors.password} //doble !! para convertir object a boolean
                                 errorMessage={errors.password?.message as string}
                                 />
