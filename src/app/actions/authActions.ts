@@ -2,40 +2,58 @@
 
 import { prisma } from "@/lib/prisma";
 import { registerSchema, RegisterSchema } from "@/lib/schemas/registerSchema";
+import { ActionResult } from "@/types";
+import { User } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
-export async function registerUser(data: RegisterSchema) {
-    // we can also use zod on the server side to validate the data fron the form
-    const validatedData = registerSchema.safeParse(data);
+export async function registerUser(data: RegisterSchema): Promise<ActionResult<User>> { //this method returns a promise of type ActionResult<User>
+    try {
+        // we can also use zod on the server side to validate the data fron the form
+        const validatedData = registerSchema.safeParse(data);
 
-    if (!validatedData.success) {
+        if (!validatedData.success) {
+            return {
+                status: "error", 
+                error: validatedData.error.errors
+            }
+        }
+
+        const { name, email, password } = validatedData.data;
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        const existingUser = await prisma.user.findUnique({
+            where: {
+                email: email
+            }
+        });
+
+        if (existingUser) {
+            return {
+                status: "error",
+                error: "Este email ya está registrado."
+            }
+        };
+
+       const user = await prisma.user.create({
+            data: {
+                name,
+                email,
+                passwordHash: hashedPassword
+            }
+        })
+
         return {
-            error: validatedData.error.errors
+            status: "success",
+            data: user
+        }
+
+    } catch (error) {
+        console.error(error);
+        return {
+            status: "error",
+            error: "Error al registrar usuario"
         }
     }
 
-    const { name, email, password} = validatedData.data;
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    const existingUser = await prisma.user.findUnique({
-        where: {
-            email: email
-        }
-    });
-
-    if (existingUser) {
-        return {
-            error: "Este email ya está registrado."
-        }
-    };
-
-// if I put the function below in a variable, then I need the await, but as I'm returning the function here, not needed to put await after the return
-    return prisma.user.create({
-        data: {
-            name,
-            email,
-            passwordHash: hashedPassword
-        }
-    })
 };
