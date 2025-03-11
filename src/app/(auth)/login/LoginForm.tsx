@@ -1,22 +1,32 @@
 'use client';
 
+import { signInUser } from '@/app/actions/authActions';
 import { loginSchema, LoginSchema } from '@/lib/schemas/loginSchema';
 import { Button, Card, CardBody, CardHeader, Input } from '@heroui/react'
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { RiLoginCircleLine } from 'react-icons/ri'
 
 export default function LoginForm() {
 
-    const {register, handleSubmit, formState: {errors, isValid}} = useForm<LoginSchema>({
+    const {register, handleSubmit, formState: {errors, isValid, isSubmitting}} = useForm<LoginSchema>({
         resolver: zodResolver(loginSchema), //le digo usá este schema de zod para decidir si los datos son válidos o nos
         mode: 'onTouched' //validar el formulario cuando el usuario deja de escribir
     });
 
+    const router = useRouter();
+
     //ya sabemos que el tipo de data que estamos utilizando es LoginSchema
-    const onSubmit = (data: LoginSchema) => { 
-        console.log(data) //get data from form
+    const onSubmit = async (data: LoginSchema) => { 
+        const result = await signInUser(data);
+
+        if (result.status === "success") {
+            router.push("/users")
+        } else {
+            console.error(result.error);
+        }
     }
 
     return (
@@ -55,7 +65,9 @@ export default function LoginForm() {
                                 isInvalid={!!errors.password} //doble !! para convertir object a boolean
                                 errorMessage={errors.password?.message as string}
                                 />
-                            <Button fullWidth type='submit' className="w-full md:w-3/4 m-4 bg-gradient-to-tr from-red-700 via-orange-600 to-yellow-500 text-white font-bold">
+                            <Button 
+                                isLoading={isSubmitting}
+                                fullWidth type='submit' className="w-full md:w-3/4 m-4 bg-gradient-to-tr from-red-700 via-orange-600 to-yellow-500 text-white font-bold">
                                 Iniciar sesión
                             </Button>
                         </div>
