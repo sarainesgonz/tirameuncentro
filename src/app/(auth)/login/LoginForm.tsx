@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { RiLoginCircleLine } from 'react-icons/ri'
+import { toast } from 'react-toastify';
 
 export default function LoginForm() {
 
@@ -25,7 +26,8 @@ export default function LoginForm() {
         if (result.status === "success") {
             router.push("/users")
         } else {
-            console.error(result.error);
+            // console.error(result.error);
+            toast.error(result.error as string);
         }
     }
 
