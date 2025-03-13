@@ -9,7 +9,7 @@ import { ToastContainer } from 'react-toastify'
 export default function Providers({children} : {children: React.ReactNode}) {
   return (
     <HeroUIProvider>
-      <ToastContainer position="top-center"/> 
+      <ToastContainer position="bottom-center"/> 
         {children}
     </HeroUIProvider>
 )
