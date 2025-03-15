@@ -8,7 +8,7 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 
 export default async function Home() {
 
-  const session = await auth();
+  const session = await auth(); //get access to session dat
 
   return (
     <div>
@@ -30,10 +30,11 @@ export default async function Home() {
       </Button>
 
       <h3 className="text-2xl font-semibold">User session data: </h3>
-
+{/* check if there is a session */}
       {session ? (
         <div>
           <pre>{JSON.stringify(session, null, 2)}</pre>
+          {/* pre > preformatted text| > null > not replacing anything | 2 for spacing indentation */}
           <form action={async () => {
             "use server";
 
