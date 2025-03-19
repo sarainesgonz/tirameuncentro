@@ -4,9 +4,13 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { GiSoccerBall } from 'react-icons/gi'
 import NavLink from './NavLink'
+import { auth } from '@/auth'
+import { useSession } from '../Providers'
+import UserMenu from './UserMenu'
 
 export default function Nav() {
 
+    const session = useSession()
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const menuItems = [
@@ -16,6 +20,10 @@ export default function Nav() {
         { label: 'Iniciar Sesión', href: '/login' },
         { label: 'Registrarse', href: '/register' },
     ]
+
+    const filteredMenuItems = session?.user
+        ? menuItems.slice(0, 3) // si loggeado, muestro primeros 3
+        : menuItems.slice(-2);
 
     return (
         <Navbar
@@ -32,6 +40,7 @@ export default function Nav() {
 
             }}>
             <NavbarContent>
+
                 {/* burguer menu icon for mobile */}
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
@@ -55,17 +64,25 @@ export default function Nav() {
             </NavbarContent>
 
             <NavbarContent justify='end'>
-                <NavbarItem className='hidden sm:flex'>
-                    <Button as={Link} href='/login' variant='light' className='text-white'>Iniciar sesión</Button>
-                </NavbarItem>
-                <NavbarItem className='hidden sm:flex'>
-                    <Button as={Link} href='/register' variant='light' className='text-white'>Registrarse</Button>
-                </NavbarItem>
+                {/* check if loggedin      */}
+                {session?.user ? (
+                    <UserMenu user={session.user} />
+                ) : (
+                    <>
+                        <NavbarItem className='hidden sm:flex'>
+                            <Button as={Link} href='/login' variant='light' className='text-white'>Iniciar sesión</Button>
+                        </NavbarItem>
+                        <NavbarItem className='hidden sm:flex'>
+                            <Button as={Link} href='/register' variant='light' className='text-white'>Registrarse</Button>
+                        </NavbarItem>
+                    </>
+                )}
+
             </NavbarContent>
 
             {/* navigation for mobile screens */}
             <NavbarMenu>
-                {menuItems.map((item, index) => (
+                {filteredMenuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item.label}-${index}`}>
                         <NavLink href={item.href} label={item.label} />
                     </NavbarMenuItem>
