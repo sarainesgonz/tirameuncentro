@@ -1,8 +1,10 @@
+"use client "
+
 import React from 'react'
 import { Session } from "next-auth"
 import { Avatar, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger } from '@heroui/react'
 import Link from 'next/link'
-import { signOut } from 'next-auth/react'
+import { signOutUser } from '@/app/actions/authActions'
 
 type Props = {
     user: Session["user"]
@@ -18,7 +20,7 @@ export default function UserMenu({ user }: Props) {
                     color="warning"
                     name={user?.name || "Usuario avatar"}
                     size='md'
-                    src={user?.image || "/images/avatar.png"}
+                    src={user?.image || "/images/user.png"}
                 />
             </DropdownTrigger>
             <DropdownMenu variant="bordered" aria-label="usermenu">
@@ -42,7 +44,7 @@ export default function UserMenu({ user }: Props) {
                     key="signOut"
                     color="danger" 
                     onPress={async () => 
-                    signOut()} href="users/edit">
+                    signOutUser()}>
                     Cerrar Sessión
                 </DropdownItem>
 
