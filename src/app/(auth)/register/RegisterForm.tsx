@@ -7,12 +7,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { LuUserPen } from 'react-icons/lu';
-import { set } from 'zod';
 
 
 export default function RegisterForm() {
     const { register, handleSubmit, setError, formState: { errors, isValid, isSubmitting } } = useForm<RegisterSchema>({
-        // resolver: zodResolver(registerSchema), //le digo usá este schema de zod para decidir si los datos son válidos o nos
+        resolver: zodResolver(registerSchema), //le digo usá este schema de zod para decidir si los datos son válidos o nos
         mode: 'onTouched' //validar el formulario cuando el usuario deja de escribir
     });
 
