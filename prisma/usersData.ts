@@ -10,7 +10,7 @@ export const usersData = [
         description: "Sunt esse aliqua ullamco in incididunt consequat commodo. Nisi ad esse elit ipsum commodo fugiat est ad. Incididunt nostrud incididunt nostrud sit excepteur occaecat.\r\n",
         city: "Rosario",
         country: "Argentina",
-        image: "/images/woman1.jpeg"
+        image: "/images/woman1.jpg"
     },
     {
         email: "karen@test.com",
@@ -23,7 +23,7 @@ export const usersData = [
         description: "Laborum dolore aliquip voluptate sunt cupidatat fugiat. Aliqua cillum deserunt do sunt ullamco aute Lorem nisi irure velit esse excepteur ex qui. Aliquip cupidatat officia ullamco duis veniam quis elit dolore nisi proident exercitation id cillum ullamco. In exercitation aliqua commodo veniam culpa duis commodo mollit et sint culpa.\r\n",
         city: "Salta",
         country: "Argentina",
-        image: "/images/woman2.jpeg"
+        image: "/images/woman2.jpg"
     },
     {
         email: "marcela@test.com",
@@ -36,7 +36,7 @@ export const usersData = [
         description: "Dolor ut mollit sunt fugiat magna do eu et aliqua. Dolor consectetur reprehenderit irure non adipisicing ad irure sint id amet reprehenderit esse consectetur ex. Nisi sunt minim amet dolore eiusmod occaecat commodo nostrud tempor dolore velit. Fugiat labore duis nulla do officia voluptate ullamco. Velit ex ullamco cillum amet qui anim et ullamco adipisicing fugiat exercitation aliqua. Consectetur et do labore enim aliqua occaecat.\r\n",
         city: "San Miguel de Tucuman",
         country: "Argentina",
-        image: "/images/woman3.jpeg"
+        image: "/images/woman3.jpg"
     },
     {
         email: "micaela@test.com",
@@ -49,7 +49,7 @@ export const usersData = [
         description: "Cillum elit nostrud enim laboris pariatur labore ipsum ut. Quis elit irure sint velit laboris anim Lorem laboris. Labore reprehenderit magna officia aliquip pariatur ea id id commodo. Culpa duis non ex nisi. Deserunt pariatur aliqua consequat reprehenderit sunt ex exercitation.\r\n",
         city: "Rosario",
         country: "Argentina",
-        image: "/images/woman4.jpeg"
+        image: "/images/woman4.jpg"
     },
     {
         email: "valeria@test.com",
@@ -62,7 +62,7 @@ export const usersData = [
         description: "Qui ipsum voluptate exercitation officia nisi velit adipisicing exercitation sint nulla do. Qui fugiat non nisi excepteur et duis elit consectetur ullamco velit fugiat. Sit do esse cupidatat quis eiusmod cupidatat.\r\n",
         city: "Buenos Aires",
         country: "Argentina",
-        image: "/images/woman5.jpeg"
+        image: "/images/woman5.jpg"
     },
     {
         email: "valentina@test.com",
@@ -75,7 +75,7 @@ export const usersData = [
         description: "Sunt esse aliqua ullamco in incididunt consequat commodo. Nisi ad esse elit ipsum commodo fugiat est ad. Incididunt nostrud incididunt nostrud sit excepteur occaecat.\r\n",
         city: "Posadas",
         country: "Argentina",
-        image: "/images/woman6.jpeg"
+        image: "/images/woman6.jpg"
     },
     {
         email: "romina@test.com",
@@ -88,7 +88,7 @@ export const usersData = [
         description: "In reprehenderit laboris excepteur incididunt. Excepteur enim irure laboris excepteur. Nostrud do esse anim id. Adipisicing reprehenderit occaecat laboris nostrud. Excepteur enim irure laboris excepteur. Nostrud do esse anim id.\r\n",
         city: "Córdoba",
         country: "Argentina",
-        image: "/images/woman7.jpeg"
+        image: "/images/woman7.jpg"
     },
     {
         email: "fernanda@test.com",
@@ -101,7 +101,7 @@ export const usersData = [
         description: "Working ipsum laboris incididunt excepteur. Adipisicing reprehenderit occaecat laboris nostrud. Excepteur enim irure laboris excepteur. Nostrud do esse anim id.\r\n",
         city: "Rawson",
         country: "Argentina",
-        image: "/images/woman8.jpeg"
+        image: "/images/woman8.jpg"
     },
     {
         email: "lautaro@test.com",
@@ -114,7 +114,7 @@ export const usersData = [
         description: "Mollit elit cillum dolore ea laboris consequat excepteur eiusmod eiusmod qui magna mollit occaecat. Sint qui ut veniam non. Est non veniam magna in consectetur ullamco eiusmod in elit aute ea ipsum aliquip. Duis nisi do dolore ad. Consectetur incididunt quis exercitation aliquip officia. Ex anim pariatur veniam fugiat aute consequat quis nisi in quis.\r\n",
         city: "Salta",
         country: "Argentina",
-        image: "/images/man1.jpeg"
+        image: "/images/man1.jpg"
     },
     {
         email: "ramiro@test.com",
@@ -127,7 +127,7 @@ export const usersData = [
         description: "Qui adipisicing enim mollit magna fugiat. Quis laborum sit adipisicing Lorem veniam magna. Aliqua ex occaecat id duis aute excepteur quis eu eiusmod. Cillum consectetur dolore officia consequat veniam nulla qui occaecat ullamco ipsum sit incididunt aute ullamco.\r\n",
         city: "Buenos Aires",
         country: "Argentina",
-        image: "/images/man2.jpeg"
+        image: "/images/man2.jpg"
     },
     {
         email: "leandro@test.com",
@@ -140,7 +140,7 @@ export const usersData = [
         description: "Aliquip labore nisi veniam exercitation sit laborum nisi pariatur dolore tempor irure. Ad officia et eu cupidatat qui irure pariatur qui excepteur dolor ut eiusmod. Exercitation qui cillum elit elit officia elit culpa eu consequat cupidatat velit esse.\r\n",
         city: "La Plata",
         country: "Argentina",
-        image: "/images/man3.jpeg"
+        image: "/images/man3.jpg"
     },
     {
         email: "santino@test.com",
@@ -153,7 +153,7 @@ export const usersData = [
         description: "Cupidatat dolor irure officia qui consequat ea laborum excepteur esse. Esse qui cupidatat minim laborum velit occaecat officia. Nulla consectetur nisi laborum in eu fugiat ipsum magna. Ipsum sunt consectetur reprehenderit ea consectetur fugiat anim enim nostrud. Ut fugiat cupidatat aliquip ipsum laborum adipisicing sint tempor. Eu deserunt aute Lorem duis exercitation aute aute commodo ut eu elit elit commodo officia.\r\n",
         city: "San Miguel de Tucuman",
         country: "Argentina",
-        image: "/images/man4.jpeg"
+        image: "/images/man4.jpg"
     },
     {
         email: "mateo@test.com",
@@ -166,7 +166,7 @@ export const usersData = [
         description: "Proident excepteur laboris incididunt irure. Excepteur enim irure laboris excepteur. Nostrud do esse anim id. Adipisicing reprehenderit occaecat laboris nostrud. Excepteur enim irure laboris excepteur. Nostrud do esse anim id.\r\n",
         city: "La Plata",
         country: "Argentina",
-        image: "/images/man5.jpeg"
+        image: "/images/man5.jpg"
     },
     {
         email: "luciano@test.com",
@@ -179,7 +179,7 @@ export const usersData = [
         description: "Keyboard ipsum laboris incididunt excepteur. Adipisicing reprehenderit occaecat laboris nostrud. Excepteur enim irure laboris excepteur. Nostrud do esse anim id.\r\n",
         city: "La Rioja",
         country: "Argentina",
-        image: "/images/man6.jpeg"
+        image: "/images/man6.jpg"
     },
     {
         email: "maximiliano@test.com",
@@ -192,7 +192,7 @@ export const usersData = [
         description: "Laborum cupidatat fugiat. Aliqua cillum deserunt do sunt ullamco aute Lorem nisi irure velit esse excepteur ex qui. Aliquip cupidatat officia ullamco duis veniam quis elit dolore nisi proident exercitation id cillum ullamco. In exercitation aliqua commodo veniam culpa duis commodo mollit et sint culpa.\r\n",
         city: "Córdoba",
         country: "Argentina",
-        image: "/images/man7.jpeg"
+        image: "/images/man7.jpg"
     },
     {
         email: "pablo@test.com",
@@ -205,6 +205,6 @@ export const usersData = [
         description: "Qui ipsum voluptate exercitation officia nisi velit adipisicing exercitation sint nulla do. Qui fugiat non nisi excepteur et duis elit consectetur ullamco velit fugiat. Sit do esse cupidatat quis eiusmod cupidatat.\r\n",
         city: "Mendoza",
         country: "Argentina",
-        image: "/images/man8.jpeg"
+        image: "/images/man8.jpg"
     }
 ]
