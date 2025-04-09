@@ -58,8 +58,8 @@ export default function Nav() {
 
             {/* navigation for desktop screens */}
             <NavbarContent className='hidden sm:flex gap-4' justify='center'>
-                <NavLink href='/users' label='Enganches' />
-                <NavLink href='/lists' label='Tribuna' />
+                <NavLink href='/users' label='Candidatos' />
+                <NavLink href='/lists' label='Titulares' />
                 <NavLink href='/messages' label='Mensajes' />
             </NavbarContent>
 
