@@ -2,6 +2,7 @@
 
 import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
+import { FaUniregistry } from "react-icons/fa";
 
 export async function getMembers() {
     const session = await auth();
@@ -15,6 +16,19 @@ export async function getMembers() {
                 NOT: {
                     userId: session.user.id
                 }
+            }
+        })
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function getMemberById(userId: string) {
+
+    try {
+        return prisma.member.findUnique({
+            where: {
+                userId: userId
             }
         })
     } catch (error) {

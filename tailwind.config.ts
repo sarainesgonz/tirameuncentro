@@ -11,7 +11,7 @@ export default {
   theme: {
     extend: {
       backgroundImage:{
-        'dark-gradient': 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
+        'dark-gradient': 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
       }
       // colors: {
       //   background: "var(--background)",
